@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <header> 
+        <link rel="stylesheet" href="stylesheet.css">
+    </header>
+    <body>
+        <script src="jquery.js"></script>
+        <script>
+            $.get("https://api.openweathermap.org/data/2.5/weather?q=Viborg&units=metric&APPID=0cd6a94861a2c3d49510223d78e002e7",  function(dataStream){
+                        $("#weather").text(dataStream.weather[0].main);
+                        $("#city").text(dataStream.name);
+                        $("#desc").text(dataStream.weather[0].description);
+                        $("#temp").text(dataStream.main.temp);
+                        var icon = dataStream.weather[0].icon;
+                        var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+                        $("#pic").attr("src", iconurl);
+                        
+                    $.get("https://api.openweathermap.org/data/2.5/forecast?q=Viborg&units=metric&APPID=94eb8f49abd52ce0348d1f50456d26a8", function(future){
+                        $("#future1").text(future.list[4].weather[0].main);
+                        $("#future1temp").text(future.list[4].main.temp);
+                        $("#future1other").text(future.list[4].weather[0].description);
+                        $("#future1date").text(future.list[4].dt_txt);
+                        var icon1 = future.list[4].weather[0].icon;
+                        var iconurl1 = "http://openweathermap.org/img/w/" + icon1 + ".png";
+                        $("#pic1").attr("src", iconurl1);
+
+                        $("#future2").text(future.list[12].weather[0].main);
+                        $("#future2temp").text(future.list[12].main.temp);
+                        $("#future2other").text(future.list[12].weather[0].description);
+                        $("#future2date").text(future.list[12].dt_txt);
+                        var icon2 = future.list[12].weather[0].icon;
+                        var iconurl2 = "http://openweathermap.org/img/w/" + icon2 + ".png";
+                        $("#pic2").attr("src", iconurl2);
+                        
+                        $("#future3").text(future.list[20].weather[0].main);
+                        $("#future3temp").text(future.list[20].main.temp);
+                        $("#future3other").text(future.list[20].weather[0].description);
+                        $("#future3date").text(future.list[20].dt_txt);
+                        var icon3 = future.list[20].weather[0].icon;
+                        var iconurl3 = "http://openweathermap.org/img/w/" + icon3 + ".png";
+                        $("#pic3").attr("src", iconurl3);
+
+                        $("#future4").text(future.list[28].weather[0].main);
+                        $("#future4temp").text(future.list[28].main.temp);
+                        $("#future4other").text(future.list[28].weather[0].description);
+                        $("#future4date").text(future.list[28].dt_txt);
+                        var icon4 = future.list[28].weather[0].icon;
+                        var iconurl4 = "http://openweathermap.org/img/w/" + icon4 + ".png";
+                        $("#pic4").attr("src", iconurl4);
+
+                        $("#future5").text(future.list[36].weather[0].main);
+                        $("#future5temp").text(future.list[36].main.temp);
+                        $("#future5other").text(future.list[36].weather[0].description);
+                        $("#future5date").text(future.list[36].dt_txt);
+                        var icon5 = future.list[36].weather[0].icon;
+                        var iconurl5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
+                        $("#pic5").attr("src", iconurl5);
+                        
+
+                    });
+                    });
+        </script>
+        <script>
+            $(document).ready(function() {
+
+                $("#submitweather").click(function(){
+
+                    var wcity = $("#wcity").val();
+
+                    $.get("https://api.openweathermap.org/data/2.5/weather?q=" + wcity + "&units=metric&APPID=0cd6a94861a2c3d49510223d78e002e7",  function(dataStream){
+                        $("#weather").text(dataStream.weather[0].main);
+                        $("#city").text(dataStream.name);
+                        $("#desc").text(dataStream.weather[0].description);
+                        $("#temp").text(dataStream.main.temp);
+                        var icon = dataStream.weather[0].icon;
+                        var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+                        $("#pic").attr("src", iconurl);
+                        
+                    $.get("https://api.openweathermap.org/data/2.5/forecast?q=" + wcity + "&units=metric&APPID=94eb8f49abd52ce0348d1f50456d26a8", function(future){
+                        $("#future1").text(future.list[4].weather[0].main);
+                        $("#future1temp").text(future.list[4].main.temp);
+                        $("#future1other").text(future.list[4].weather[0].description);
+                        $("#future1date").text(future.list[4].dt_txt);
+                        var icon1 = future.list[4].weather[0].icon;
+                        var iconurl1 = "http://openweathermap.org/img/w/" + icon1 + ".png";
+                        $("#pic1").attr("src", iconurl1);
+
+                        $("#future2").text(future.list[12].weather[0].main);
+                        $("#future2temp").text(future.list[12].main.temp);
+                        $("#future2other").text(future.list[12].weather[0].description);
+                        $("#future2date").text(future.list[12].dt_txt);
+                        var icon2 = future.list[12].weather[0].icon;
+                        var iconurl2 = "http://openweathermap.org/img/w/" + icon2 + ".png";
+                        $("#pic2").attr("src", iconurl2);
+                        
+                        $("#future3").text(future.list[20].weather[0].main);
+                        $("#future3temp").text(future.list[20].main.temp);
+                        $("#future3other").text(future.list[20].weather[0].description);
+                        $("#future3date").text(future.list[20].dt_txt);
+                        var icon3 = future.list[20].weather[0].icon;
+                        var iconurl3 = "http://openweathermap.org/img/w/" + icon3 + ".png";
+                        $("#pic3").attr("src", iconurl3);
+
+                        $("#future4").text(future.list[28].weather[0].main);
+                        $("#future4temp").text(future.list[28].main.temp);
+                        $("#future4other").text(future.list[28].weather[0].description);
+                        $("#future4date").text(future.list[28].dt_txt);
+                        var icon4 = future.list[28].weather[0].icon;
+                        var iconurl4 = "http://openweathermap.org/img/w/" + icon4 + ".png";
+                        $("#pic4").attr("src", iconurl4);
+
+                        $("#future5").text(future.list[36].weather[0].main);
+                        $("#future5temp").text(future.list[36].main.temp);
+                        $("#future5other").text(future.list[36].weather[0].description);
+                        $("#future5date").text(future.list[36].dt_txt);
+                        var icon5 = future.list[36].weather[0].icon;
+                        var iconurl5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
+                        $("#pic5").attr("src", iconurl5);
+                        
+
+                    });
+                    });
+                });
+        
+            });	
+        </script>
+
+    <script>
+        $.get("http://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=9e526c0fc0754a049f49681fad68aae6",  function(dataStreamNews){
+        $("#title").text(dataStreamNews.articles[0].title);
+        $("#author").text(dataStreamNews.articles[0].author);
+        $("#newsdesc").text(dataStreamNews.articles[0].description);
+        $("#img").attr("src", dataStreamNews.articles[0].urlToImage);
+
+        });	
+    </script>
+        <div class="mainBox">
+            <h1 class="dashboard"><b>Dashboard</b></h1>
+            <div class="leftbox">
+                
+                <h1>
+                    The Weather
+                </h1>
+                            <div height="200px">
+                <h2 id="weather"> </h2>
+                <h3 id="desc"> </h3>
+                <p id="city"></p>
+                <img id="pic"></img>
+                <p id="temp"></p>
+
+                </div>
+                
+                <div class="futures">
+                
+                    <div id="first">
+
+                        
+                        <h2 id="future1"></h2>
+                        <h4 id="future1other"> </h3>
+                        <h4 id="future1temp"> </h4>
+                        <img id="pic1"></img>
+                        <h5 id="future1date"> </h5>                
+                    </div>
+                    
+                    <div id="second">
+                        
+                        <h2 id="future2"></h2>
+                        <h4 id="future2other"> </h4>
+                        <h4 id="future2temp"> </h4>
+                        <img id="pic2"></img>
+                        <h5 id="future2date"> </h5>
+                    </div>
+
+                    <div id="third">
+                        
+                        <h2 id="future3"></h2>
+                        <h4 id="future3other"> </h4>
+                        <h4 id="future3temp"> </h4>
+                        <img id="pic3"></img>
+                        <h5 id="future3date"> </h5>
+                    </div>
+                    
+                    <div id="fourth">
+                        
+                        <h2 id="future4"></h2>
+                        <h4 id="future4other"> </h4>
+                        <h4 id="future4temp"> </h4>
+                        <img id="pic4"></img>
+                        <h5 id="future4date"> </h5>
+                    </div>
+                        
+                    <div id="fifth">
+                         
+                        <h2 id="future5"></h2>
+                        <h4 id="future5other"> </h4>
+                        <h4 id="future5temp"> </h4>
+                        <img id="pic5"></img>
+                        <h5 id="future5date"> </h5>
+                    </div>
+
+                    
+                </div>
+               
+                    
+                
+                    <input class="search" float="left" type="text" name="wcity" id="wcity" placeholder="City Name"></input>
+                    <button class="searchbtn" name="submitweather" id="submitweather">Check Weather</button>
+
+                    
+            </div>
+            
+            
+            
+            <div class="rightbox">
+                
+                <h1>
+                    The News
+                </h1>
+                <h2 id="title"> </h2>
+                <h3 id="author"> </h3>
+                <h4 id="newsdesc"> </h4>
+                <img id="img" height="450px" width="715px"> </img>
+                
+            </div>
+            <script src="api.js"> </script>
+            <div>
+                <iframe class="bottombox" width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/546882861&color=%2300ff0a&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            </div>
+        </div>
+    </body>
+
+</html>
